@@ -1,0 +1,16 @@
+Símbolo         Valor Decimal   Valor Hexadecimal
+-------         -------------   -----------------
+MASCARA                    65                  41
+LACO_M                     71                  47
+FIM_M                      79                  4F
+ISOLAR                     80                  50
+ZERAR                      87                  57
+LIGAR                      96                  60
+CONTAR                    103                  67
+LACO_C                    111                  6F
+PROX                      117                  75
+VALOR                    1024                 400
+RES_ISOLAR               1026                 402
+RES_ZERAR                1028                 404
+RES_LIGAR                1030                 406
+RES_CONTAR               1032                 408

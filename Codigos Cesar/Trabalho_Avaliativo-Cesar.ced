@@ -1,0 +1,67 @@
+; Trabalho avaliativo - nome, RA e prompt (S/N)
+org 0
+    MOV #TEXTO, R1    ; R1 = ponteiro da string
+    MOV #65500, R2    ; R2 = ponteiro do visor
+LACO_PRINT:
+    MOV (R1)+, R0     ; le um caractere (palavra de 16 bits)
+    BEQ LER_TECLA     ; 0 = fim da string
+    MOV R0, (R2)      ; escreve 1 caractere no visor
+    INC R2
+    BR LACO_PRINT
+LER_TECLA:
+    CLR 65498         ; libera o teclado
+ESPERA:
+    TST 65498
+    BEQ ESPERA        ; espera uma tecla
+    MOV 65499, R0     ; le o codigo ASCII da tecla
+    CMP #83, R0       ; 'S'
+    BEQ FIM
+    CMP #115, R0      ; 's'
+    BEQ FIM
+    CMP #78, R0       ; 'N'
+    BEQ FIM
+    CMP #110, R0      ; 'n'
+    BEQ FIM
+    BR LER_TECLA      ; outra tecla: ignora e espera de novo
+FIM:
+    HLT
+
+org 1024
+TEXTO:
+    dw 71    ; G
+    dw 97    ; a
+    dw 98    ; b
+    dw 114   ; r
+    dw 105   ; i
+    dw 101   ; e
+    dw 108   ; l
+    dw 32    ; (espaco)
+    dw 67    ; C
+    dw 97    ; a
+    dw 98    ; b
+    dw 114   ; r
+    dw 97    ; a
+    dw 108   ; l
+    dw 32    ; (espaco)
+    dw 87    ; W
+    dw 97    ; a
+    dw 108   ; l
+    dw 108   ; l
+    dw 101   ; e
+    dw 110   ; n
+    dw 100   ; d
+    dw 122   ; z
+    dw 117   ; u
+    dw 32    ; (espaco)
+    dw 72    ; H
+    dw 84    ; T
+    dw 51    ; 3
+    dw 48    ; 0
+    dw 56    ; 8
+    dw 48    ; 0
+    dw 50    ; 2
+    dw 53    ; 5
+    dw 49    ; 1
+    dw 32    ; (espaco)
+    dw 62    ; >
+    dw 0              ; fim da string

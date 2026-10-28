@@ -1,0 +1,25 @@
+; Versao 3 - enderecamento pos-incrementado
+org 0
+    CLR R0
+    MOV 1026, R2
+    MOV 1024, R1
+LACO:
+    BEQ FIM
+    ADD (R2)+, R0     ; soma e ja incrementa R2 em 2
+    DEC R1
+    BR LACO
+FIM:
+    MOV R0, 1028
+    HLT
+
+org 1024
+TAM:    dw 5
+ENDINI: dw 1030
+TOTAL:  dw 0
+
+org 1030
+    dw 10
+    dw 20
+    dw 30
+    dw 40
+    dw 50

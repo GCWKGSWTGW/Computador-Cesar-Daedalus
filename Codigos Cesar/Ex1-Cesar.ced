@@ -1,0 +1,30 @@
+; Ex.1 - posicao de um valor (ASCII) em um vetor (1 = primeiro; 0 = ausente)
+org 1024
+    dw 4              ; n = tamanho do vetor
+    dw 1032           ; endereco inicial do vetor
+    dw 67             ; valor procurado: 'C'
+    dw 0              ; resultado: posicao (1030)
+
+org 1032
+    dw 65             ; 'A'
+    dw 66             ; 'B'
+    dw 67             ; 'C'
+    dw 68             ; 'D'
+
+org 0
+    MOV 1024, R0      ; R0 = n (elementos restantes)
+    MOV 1026, R1      ; R1 = ponteiro do vetor
+    MOV 1028, R2      ; R2 = valor procurado
+    MOV #1, R3        ; R3 = posicao atual (comeca em 1)
+    TST R0
+    BEQ NAOACHOU      ; vetor vazio
+LACO:
+    CMP (R1)+, R2     ; compara o elemento e avanca o ponteiro
+    BEQ ACHOU
+    INC R3            ; proxima posicao
+    SOB R0, LACO
+NAOACHOU:
+    CLR R3            ; nao encontrou: resultado 0
+ACHOU:
+    MOV R3, 1030      ; grava a posicao
+    HLT

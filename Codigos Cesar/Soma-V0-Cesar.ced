@@ -1,0 +1,26 @@
+; Versao 0 - traducao direta do Ramses
+org 0
+    MOV #0, R0        ; total = 0
+    MOV 1026, R2      ; ponteiro = endereco inicial
+    MOV 1024, R1      ; contador = n
+LACO:
+    BEQ FIM           ; contador = 0 ? termina
+    ADD (R2), R0      ; soma o elemento apontado por R2
+    ADD #2, R2        ; ponteiro + 2 (palavra = 2 bytes)
+    SUB #1, R1        ; contador - 1
+    JMP LACO
+FIM:
+    MOV R0, 1028      ; grava o total
+    HLT
+
+org 1024
+TAM:    dw 5          ; n = numero de posicoes
+ENDINI: dw 1030       ; endereco inicial do vetor
+TOTAL:  dw 0          ; resultado da soma
+
+org 1030              ; vetor a ser somado
+    dw 10
+    dw 20
+    dw 30
+    dw 40
+    dw 50

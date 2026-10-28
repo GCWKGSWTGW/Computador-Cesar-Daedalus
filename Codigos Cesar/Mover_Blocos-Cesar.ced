@@ -1,0 +1,31 @@
+; Mover n palavras de um bloco (sem zerar a origem)
+org 1024
+    dw 4              ; n = numero de palavras
+    dw 1030           ; endereco inicial da origem
+    dw 1034           ; endereco inicial do destino (sobrepoe a origem)
+
+org 1030
+    dw 11
+    dw 22
+    dw 33
+    dw 44
+
+org 0
+    MOV 1024, R0      ; R0 = n
+    MOV 1026, R1      ; R1 = origem
+    MOV 1028, R2      ; R2 = destino
+    CMP R2, R1        ; destino - origem
+    BGT INVERSO       ; destino acima da origem: copia de tras para frente
+FRENTE:
+    MOV (R1)+, (R2)+  ; copia uma palavra no sentido crescente
+    SOB R0, FRENTE
+    HLT
+INVERSO:
+    ASL R0            ; n x 2 = tamanho do bloco em bytes
+    ADD R0, R1        ; R1 aponta para o fim da origem
+    ADD R0, R2        ; R2 aponta para o fim do destino
+    MOV 1024, R0      ; restaura o contador em palavras
+LACO_INV:
+    MOV -(R1), -(R2)  ; decrementa os dois ponteiros e copia
+    SOB R0, LACO_INV
+    HLT

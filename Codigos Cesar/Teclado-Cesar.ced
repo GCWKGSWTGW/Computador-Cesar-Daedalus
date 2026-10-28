@@ -1,0 +1,14 @@
+; Leitura do teclado com eco no visor (e retorno ao inicio ao encher)
+org 0
+    MOV #65498, R3    ; R3 = endereco do estado do teclado
+REINICIA:
+    MOV #65500, R1    ; R1 = primeira posicao do visor
+LIBERA:
+    CLR (R3)          ; libera o teclado para uma nova tecla
+ESPERA:
+    TST (R3)
+    BEQ ESPERA        ; estado 0: ainda nao ha tecla
+    MOV 65499, (R1)   ; copia o caractere digitado para o visor
+    INC R1            ; proxima posicao do visor
+    BEQ REINICIA      ; R1 passou de 65535 e virou 0: visor cheio
+    BR LIBERA

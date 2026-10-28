@@ -1,0 +1,29 @@
+; Ex.2 - inicializar um vetor com um valor em memoria
+org 1024
+    dw 10             ; n = tamanho do vetor
+    dw 1032           ; endereco inicial do vetor
+    dw 42             ; valor a gravar ('*')
+
+org 1032              ; vetor (10 palavras, inicialmente zeradas)
+    dw 0
+    dw 0
+    dw 0
+    dw 0
+    dw 0
+    dw 0
+    dw 0
+    dw 0
+    dw 0
+    dw 0
+
+org 0
+    MOV 1024, R0      ; R0 = n
+    MOV 1026, R1      ; R1 = ponteiro do vetor
+    MOV 1028, R2      ; R2 = valor
+    TST R0
+    BEQ FIM           ; n = 0: nada a fazer
+LACO:
+    MOV R2, (R1)+     ; grava e avanca o ponteiro
+    SOB R0, LACO
+FIM:
+    HLT

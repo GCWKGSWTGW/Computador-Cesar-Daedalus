@@ -1,0 +1,26 @@
+; Versao 1 - CLR, DEC e BR
+org 0
+    CLR R0            ; total = 0 (instrucao menor que MOV #0)
+    MOV 1026, R2
+    MOV 1024, R1
+LACO:
+    BEQ FIM
+    ADD (R2), R0
+    ADD #2, R2
+    DEC R1            ; contador - 1 (substitui SUB #1)
+    BR LACO           ; desvio relativo (substitui JMP)
+FIM:
+    MOV R0, 1028
+    HLT
+
+org 1024
+TAM:    dw 5
+ENDINI: dw 1030
+TOTAL:  dw 0
+
+org 1030
+    dw 10
+    dw 20
+    dw 30
+    dw 40
+    dw 50

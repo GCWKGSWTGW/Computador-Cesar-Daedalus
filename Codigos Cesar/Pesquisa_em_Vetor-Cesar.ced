@@ -1,0 +1,39 @@
+; Maior valor de um vetor e sua posicao relativa
+org 1024
+    dw 8              ; n = tamanho do vetor
+    dw 1032           ; endereco inicial do vetor
+    dw 0              ; resultado: maior valor      (1028)
+    dw 0              ; resultado: posicao relativa (1030)
+
+org 1032
+    dw 12
+    dw 17
+    dw 23
+    dw 15
+    dw 8
+    dw 27
+    dw 26
+    dw 37
+
+org 0
+    MOV 1024, R0      ; R0 = tamanho
+    MOV 1026, R1      ; R1 = ponteiro do vetor
+    MOV (R1)+, R2     ; 1o elemento = maior provisorio
+    MOV R0, R3        ; R3 = contador associado ao maior
+    DEC R0            ; restam n - 1 elementos
+    BEQ RESULTADO     ; vetor de 1 elemento
+LACO:
+    CMP (R1), R2      ; elemento - maior
+    BLE PROXIMO       ; menor ou igual: mantem o maior
+    MOV (R1), R2      ; novo maior
+    MOV R0, R3        ; guarda o contador atual
+PROXIMO:
+    ADD #2, R1        ; avanca o ponteiro
+    SOB R0, LACO
+RESULTADO:
+    MOV R2, 1028      ; maior valor
+    MOV 1024, R4
+    SUB R3, R4
+    INC R4            ; posicao = n - contador + 1
+    MOV R4, 1030      ; posicao relativa
+    HLT

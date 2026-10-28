@@ -1,0 +1,65 @@
+; Ex.3 - manipulacao de bits (R0 = valor, R1 = posicao 0 a 15)
+org 0
+    MOV #8192, R6     ; inicia a pilha (SP), longe dos dados e do visor
+    MOV VALOR, R0
+    MOV #4, R1
+    JSR R5, ISOLAR    ; isola o bit 4
+    MOV R0, RES_ISOLAR
+    MOV VALOR, R0
+    MOV #5, R1
+    JSR R5, ZERAR     ; zera o bit 5
+    MOV R0, RES_ZERAR
+    MOV VALOR, R0
+    MOV #0, R1
+    JSR R5, LIGAR     ; liga o bit 0
+    MOV R0, RES_LIGAR
+    MOV VALOR, R0
+    JSR R5, CONTAR    ; conta os bits ligados
+    MOV R1, RES_CONTAR
+    HLT
+
+MASCARA:              ; entrada R1 = pos; saida R2 = 1 deslocado pos vezes
+    MOV #1, R2
+    MOV R1, R3        ; R3 = contador de deslocamentos
+LACO_M:
+    BEQ FIM_M
+    ASL R2
+    DEC R3
+    BR LACO_M
+FIM_M:
+    RTS R4
+
+ISOLAR:               ; saida R0 = somente o bit da posicao R1
+    JSR R4, MASCARA
+    AND R2, R0
+    RTS R5
+
+ZERAR:                ; saida R0 = valor com o bit da posicao R1 em 0
+    JSR R4, MASCARA
+    NOT R2            ; inverte a mascara
+    AND R2, R0
+    RTS R5
+
+LIGAR:                ; saida R0 = valor com o bit da posicao R1 em 1
+    JSR R4, MASCARA
+    OR R2, R0
+    RTS R5
+
+CONTAR:               ; entrada R0 = valor; saida R1 = bits ligados
+    CLR R1
+    MOV R0, R2        ; trabalha em uma copia
+    MOV #16, R3
+LACO_C:
+    ASR R2            ; bit menos significativo vai para o carry
+    BCC PROX
+    INC R1            ; carry = 1: bit ligado
+PROX:
+    SOB R3, LACO_C
+    RTS R5
+
+org 1024
+VALOR:       dw 180   ; 10110100b
+RES_ISOLAR:  dw 0
+RES_ZERAR:   dw 0
+RES_LIGAR:   dw 0
+RES_CONTAR:  dw 0
