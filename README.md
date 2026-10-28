@@ -77,34 +77,34 @@ V4  █████████████████████             
 
 | Versão | Mudança principal | Instruções por volta | Arquivos |
 |---|---|---|---|
-| **V0** | Tradução direta do Ramses | 5 | [`Soma-V0-Cesar.ced`](Codigos/Soma-V0-Cesar.ced) · [`Soma-V0-Cesar.mem`](Codigos/Soma-V0-Cesar.mem) · [`Soma-V0-Cesar.map`](Codigos/Soma-V0-Cesar.map) |
-| **V1** | `CLR`, `DEC` e `BR` (instruções mais curtas) | 5 | [`Soma-V1-Cesar.ced`](Codigos/Soma-V1-Cesar.ced) · [`Soma-V1-Cesar.mem`](Codigos/Soma-V1-Cesar.mem) · [`Soma-V1-Cesar.map`](Codigos/Soma-V1-Cesar.map) |
-| **V2** | Teste de zero fora do laço e `BNE` no final | 4 | [`Soma-V2-Cesar.ced`](Codigos/Soma-V2-Cesar.ced) · [`Soma-V2-Cesar.mem`](Codigos/Soma-V2-Cesar.mem) · [`Soma-V2-Cesar.map`](Codigos/Soma-V2-Cesar.map) |
-| **V3** | Endereçamento pós-incrementado `(R2)+` | 4 | [`Soma-V3-Cesar.ced`](Codigos/Soma-V3-Cesar.ced) · [`Soma-V3-Cesar.mem`](Codigos/Soma-V3-Cesar.mem) · [`Soma-V3-Cesar.map`](Codigos/Soma-V3-Cesar.map) |
-| **V4** | Instrução `SOB` faz contagem e desvio | 2 | [`Soma-V4-Cesar.ced`](Codigos/Soma-V4-Cesar.ced) · [`Soma-V4-Cesar.mem`](Codigos/Soma-V4-Cesar.mem) · [`Soma-V4-Cesar.map`](Codigos/Soma-V4-Cesar.map) |
+| **V0** | Tradução direta do Ramses | 5 | [`Soma-V0-Cesar.ced`](Codigos%20Cesar/Soma-V0-Cesar.ced) · [`Soma-V0-Cesar.mem`](Codigos%20Cesar/Soma-V0-Cesar.mem) · [`Soma-V0-Cesar.map`](Codigos%20Cesar/Soma-V0-Cesar.map) |
+| **V1** | `CLR`, `DEC` e `BR` (instruções mais curtas) | 5 | [`Soma-V1-Cesar.ced`](Codigos%20Cesar/Soma-V1-Cesar.ced) · [`Soma-V1-Cesar.mem`](Codigos%20Cesar/Soma-V1-Cesar.mem) · [`Soma-V1-Cesar.map`](Codigos%20Cesar/Soma-V1-Cesar.map) |
+| **V2** | Teste de zero fora do laço e `BNE` no final | 4 | [`Soma-V2-Cesar.ced`](Codigos%20Cesar/Soma-V2-Cesar.ced) · [`Soma-V2-Cesar.mem`](Codigos%20Cesar/Soma-V2-Cesar.mem) · [`Soma-V2-Cesar.map`](Codigos%20Cesar/Soma-V2-Cesar.map) |
+| **V3** | Endereçamento pós-incrementado `(R2)+` | 4 | [`Soma-V3-Cesar.ced`](Codigos%20Cesar/Soma-V3-Cesar.ced) · [`Soma-V3-Cesar.mem`](Codigos%20Cesar/Soma-V3-Cesar.mem) · [`Soma-V3-Cesar.map`](Codigos%20Cesar/Soma-V3-Cesar.map) |
+| **V4** | Instrução `SOB` faz contagem e desvio | 2 | [`Soma-V4-Cesar.ced`](Codigos%20Cesar/Soma-V4-Cesar.ced) · [`Soma-V4-Cesar.mem`](Codigos%20Cesar/Soma-V4-Cesar.mem) · [`Soma-V4-Cesar.map`](Codigos%20Cesar/Soma-V4-Cesar.map) |
 
 ### 📚 Exercícios resolvidos do laboratório
 
 | Programa | O que faz | Arquivos |
 |---|---|---|
-| ➕ **Soma de 32 bits** | Soma duas variáveis de 32 bits propagando o carry com `ADC` | [`Soma32-Cesar.ced`](Codigos/Soma32-Cesar.ced) · [`Soma32-Cesar.mem`](Codigos/Soma32-Cesar.mem) · [`Soma32-Cesar.map`](Codigos/Soma32-Cesar.map) |
-| 📋 **Mover bloco** | Copia *n* palavras e escolhe o sentido da cópia quando há sobreposição | [`Mover_Blocos-Cesar.ced`](Codigos/Mover_Blocos-Cesar.ced) · [`Mover_Blocos-Cesar.mem`](Codigos/Mover_Blocos-Cesar.mem) · [`Mover_Blocos-Cesar.map`](Codigos/Mover_Blocos-Cesar.map) |
-| 🔎 **Pesquisa em vetor** | Maior valor do vetor e sua posição relativa | [`Pesquisa_em_Vetor-Cesar.ced`](Codigos/Pesquisa_em_Vetor-Cesar.ced) · [`Pesquisa_em_Vetor-Cesar.mem`](Codigos/Pesquisa_em_Vetor-Cesar.mem) · [`Pesquisa_em_Vetor-Cesar.map`](Codigos/Pesquisa_em_Vetor-Cesar.map) |
-| ⌨️ **Teclado e visor** | Lê o teclado e exibe cada caractere no visor | [`Teclado-Cesar.ced`](Codigos/Teclado-Cesar.ced) · [`Teclado-Cesar.mem`](Codigos/Teclado-Cesar.mem) · [`Teclado-Cesar.map`](Codigos/Teclado-Cesar.map) |
+| ➕ **Soma de 32 bits** | Soma duas variáveis de 32 bits propagando o carry com `ADC` | [`Soma32-Cesar.ced`](Codigos%20Cesar/Soma32-Cesar.ced) · [`Soma32-Cesar.mem`](Codigos%20Cesar/Soma32-Cesar.mem) · [`Soma32-Cesar.map`](Codigos%20Cesar/Soma32-Cesar.map) |
+| 📋 **Mover bloco** | Copia *n* palavras e escolhe o sentido da cópia quando há sobreposição | [`Mover_Blocos-Cesar.ced`](Codigos%20Cesar/Mover_Blocos-Cesar.ced) · [`Mover_Blocos-Cesar.mem`](Codigos%20Cesar/Mover_Blocos-Cesar.mem) · [`Mover_Blocos-Cesar.map`](Codigos%20Cesar/Mover_Blocos-Cesar.map) |
+| 🔎 **Pesquisa em vetor** | Maior valor do vetor e sua posição relativa | [`Pesquisa_em_Vetor-Cesar.ced`](Codigos%20Cesar/Pesquisa_em_Vetor-Cesar.ced) · [`Pesquisa_em_Vetor-Cesar.mem`](Codigos%20Cesar/Pesquisa_em_Vetor-Cesar.mem) · [`Pesquisa_em_Vetor-Cesar.map`](Codigos%20Cesar/Pesquisa_em_Vetor-Cesar.map) |
+| ⌨️ **Teclado e visor** | Lê o teclado e exibe cada caractere no visor | [`Teclado-Cesar.ced`](Codigos%20Cesar/Teclado-Cesar.ced) · [`Teclado-Cesar.mem`](Codigos%20Cesar/Teclado-Cesar.mem) · [`Teclado-Cesar.map`](Codigos%20Cesar/Teclado-Cesar.map) |
 
 ### ✏️ Exercícios propostos
 
 | Exercício | O que faz | Arquivos |
 |---|---|---|
-| **1** | Posição de um valor (ASCII) em um vetor (`0` se não achar) | [`Exercício1-Cesar.ced`](Codigos/Exerc%C3%ADcio1-Cesar.ced) · [`Exercício1-Cesar.mem`](Codigos/Exerc%C3%ADcio1-Cesar.mem) · [`Exercício1-Cesar.map`](Codigos/Exerc%C3%ADcio1-Cesar.map) |
-| **2** | Inicializa um vetor com um valor em memória | [`Exercício2-Cesar.ced`](Codigos/Exerc%C3%ADcio2-Cesar.ced) · [`Exercício2-Cesar.mem`](Codigos/Exerc%C3%ADcio2-Cesar.mem) · [`Exercício2-Cesar.map`](Codigos/Exerc%C3%ADcio2-Cesar.map) |
-| **3** | Isolar, zerar, ligar e contar bits, com sub-rotinas `JSR`/`RTS` | [`Exercício3-Cesar.ced`](Codigos/Exerc%C3%ADcio3-Cesar.ced) · [`Exercício3-Cesar.mem`](Codigos/Exerc%C3%ADcio3-Cesar.mem) · [`Exercício3-Cesar.map`](Codigos/Exerc%C3%ADcio3-Cesar.map) |
+| **1** | Posição de um valor (ASCII) em um vetor (`0` se não achar) | [`Exercício1-Cesar.ced`](Codigos%20Cesar/Exerc%C3%ADcio1-Cesar.ced) · [`Exercício1-Cesar.mem`](Codigos%20Cesar/Exerc%C3%ADcio1-Cesar.mem) · [`Exercício1-Cesar.map`](Codigos%20Cesar/Exerc%C3%ADcio1-Cesar.map) |
+| **2** | Inicializa um vetor com um valor em memória | [`Exercício2-Cesar.ced`](Codigos%20Cesar/Exerc%C3%ADcio2-Cesar.ced) · [`Exercício2-Cesar.mem`](Codigos%20Cesar/Exerc%C3%ADcio2-Cesar.mem) · [`Exercício2-Cesar.map`](Codigos%20Cesar/Exerc%C3%ADcio2-Cesar.map) |
+| **3** | Isolar, zerar, ligar e contar bits, com sub-rotinas `JSR`/`RTS` | [`Exercício3-Cesar.ced`](Codigos%20Cesar/Exerc%C3%ADcio3-Cesar.ced) · [`Exercício3-Cesar.mem`](Codigos%20Cesar/Exerc%C3%ADcio3-Cesar.mem) · [`Exercício3-Cesar.map`](Codigos%20Cesar/Exerc%C3%ADcio3-Cesar.map) |
 
 ### 🏁 Trabalho avaliativo
 
 Exibe `Gabriel Cabral Wallendzu HT3080251 >` no visor (36 caracteres, a capacidade exata do visor) e espera uma resposta. As teclas **S**, **s**, **N** e **n** encerram o programa; qualquer outra é ignorada.
 
-[`Trabalho_Avaliativo-Cesar.ced`](Codigos/Trabalho_Avaliativo-Cesar.ced) · [`Trabalho_Avaliativo-Cesar.mem`](Codigos/Trabalho_Avaliativo-Cesar.mem) · [`Trabalho_Avaliativo-Cesar.map`](Codigos/Trabalho_Avaliativo-Cesar.map)
+[`Trabalho_Avaliativo-Cesar.ced`](Codigos%20Cesar/Trabalho_Avaliativo-Cesar.ced) · [`Trabalho_Avaliativo-Cesar.mem`](Codigos%20Cesar/Trabalho_Avaliativo-Cesar.mem) · [`Trabalho_Avaliativo-Cesar.map`](Codigos%20Cesar/Trabalho_Avaliativo-Cesar.map)
 
 ---
 
@@ -185,7 +185,7 @@ Trabalho **individual**: todas as tarefas foram realizadas por Gabriel Cabral Wa
 
 ```
 .
-├── Codigos/
+├── Codigos Cesar/
 │   ├── Soma-V0-Cesar.ced · .mem · .map   (V0 a V4)
 │   ├── Soma32-Cesar.*
 │   ├── Mover_Blocos-Cesar.*
